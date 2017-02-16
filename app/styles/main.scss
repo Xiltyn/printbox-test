@@ -1,0 +1,132 @@
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+@import "_normalize.scss";
+// variables
+
+$medium-screen: 'min-width: 600px';
+$large-screen: 'min-width: 1024px';
+
+
+
+// Mobile
+
+.menu {
+  display: none;
+}
+
+.filters-bar {
+  display: none;
+}
+
+#content {
+  position: relative;
+}
+
+.products-list {
+  padding: 0 25px;
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+}
+.product-card {
+  position: relative;
+  width: 100%;
+  padding: 0 20px;
+  .card-img {
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+    img {
+      width: 100%;
+      height: auto;
+      transition: all 0.3s ease-out;
+    }
+    img:hover {
+      width: 200%;
+      margin-left: -50%;
+      margin-top: -20%;
+      height: auto;
+      transition: all 0.3s ease-out;
+    }
+  }
+  .card-rating {
+    display: flex;
+    .stars {
+      width: 90%;
+    }
+    .heart {
+      width: 10%;
+      float: right;
+    }
+  }
+  .card-desc {
+    margin: 0;
+    padding: 0;
+    h3, p {
+      margin: inherit;
+    }
+  }
+}
+
+
+@media screen and ($medium-screen) {
+
+  .product-card {
+    width: 45%;
+    padding: 0 2.5%;
+  }
+
+}
+
+@media screen and ($large-screen) {
+
+  .product-card {
+    width: 26%;
+    padding: 0 3.66%;
+  }
+
+  .menu {
+    display: block;
+    width: 100vw;
+    height: 2rem;
+    border: 2px solid #eeeeee;
+    margin-top: 0.5rem;
+    .menu-items {
+      font-size: 18px;
+      line-height: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      .item {
+        margin: auto;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .filters-bar {
+    display: block;
+    padding: 30px 50px 50px 50px;
+    font-size: 14px;
+    font-weight: bold;
+    .results {
+      padding: 5px;
+      span {
+        color: #9b9b9b;
+      }
+    }
+    .filters {
+      display: flex;
+      div {
+        padding: 5px;
+      }
+      .filter-btn {
+        color: #9b9b9b;
+        border: 1px solid #eee;
+        margin: 0 5px;
+      }
+    }
+  }
+
+}
